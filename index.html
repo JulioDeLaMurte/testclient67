@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Test audio</title>
+        <meta name="description" content="Application pour test auditif">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="black"/>
+
+        <link href="public/packages/bootstrap.css" media="all" rel="stylesheet">
+        <link rel="stylesheet" href="public/css/styleSheet.css" >
+        <link rel="manifest" href="public/pwa/manifest.json">
+        <link rel="apple-touch-icon" href="public/img/apple_acuitis_logo.ico">
+    </head>
+
+    <body class="">
+        
+  
+  
+
+
+        
+        <div class="page" style="background-color: #FEEAE6;">
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-12  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto ">
+                            <div class="text-center pb-3  question_text"  style="text-align: center;">
+                                <p id="question_context" class="pb-3"><strong> Pour commencer</strong></p>
+                                <p>Vous êtes ?</p>
+                            </div>
+                            <div class="btn_perso from-top">Un homme</div>
+                            <div class="btn_perso from-top">Une femme</div>
+                            <div class="btn_perso from-top">Sans réponse</div>
+                
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+        <div class="page" style="background-color: #FEEAE6;">
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-12  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto  ">
+                        <div class="text-center pb-3 question_text"  style="text-align: center;">
+                            <p id="question_context" class="pb-3"><strong> Ensuite</strong></p>
+                            <p>Quel est votre âge ?</p>
+                        </div>
+                
+                        <div class="btn_perso from-top" >Entre 0 et 30 ans</div>
+                        <div class="btn_perso from-top" >Entre 31 et 55 ans</div>
+                        <div class="btn_perso from-top" >Entre 56 et 65 ans</div>
+                        <div class="btn_perso from-top" >Plus de 65 ans</div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+
+        <div class="page" style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_parc.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-12  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto  ">
+                        <div class="text-center pb-3 context"  style="text-align: center;">
+                            <p id="question_context" class="pb-3"><strong>Au parc</strong></p>
+                            <p class="pb-4">Des amis décident de l'endroit où ils vont s'installer pour leur pique-nique. </p>
+                            <p class="pb-5">Ecoutez le dialogue puis sélectionnez la bonne réponse parmi les choix.</p>
+                        </div>
+                            <div class="btn_perso from-top text-center" id="start">Je suis prêt !</div>
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+        <div class="page text-center mx-auto " style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_parc.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+            <div class="">
+                <h1 style="color: white;">Veuillez écouter l'enregistrement audio</h1>
+                <div class="lds-dual-ring"></div>
+
+            </div>
+   
+            <audio id="sound_park"  onended="change_page(this,'audio')"> <!--Source the audio file. -->
+                <source src="public/audio/Park-0dB.mp3" type="audio/mpeg" crossOrigin="anonymous">
+            </audio>
+        </div>
+
+        <div class="page" style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_parc.jpg'); background-repeat: no-repeat; background-size: 100% 100%; ">
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-10  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto  ">
+                        <div class="text-center pb-3 question_text"  style="text-align: center;">
+                            <p id="question_context" class="pb-3"><strong> Au parc</strong></p>
+                            <p>Où vont-ils avoir leur pique-nique?</p>
+                        </div>
+                
+                        <div data-value="false" class="btn_perso from-top" id="name">Près de l'arbre</div>
+                        <div data-value="true" class="btn_perso from-top">Près du lac</div>
+                        <div data-value="false" class="btn_perso from-top">Près de la cloture</div>
+                        <div data-value="false" class="btn_perso from-top">Je n'ai pas entendu</div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+        <div class="page" style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_voiture.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-12  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto  ">
+                        <div class="text-center pb-3 context"  style="text-align: center;">
+                            <p id="question_context" class="pb-3"><strong>En voiture</strong></p>
+                            <p class="pb-4">Une personne ne sait pas quelle direction prendre. </p>
+                            <p class="pb-5">Ecoutez le dialogue puis sélectionnez la bonne réponse parmi les choix proposés.</p>
+                        </div>
+                            <div class="btn_perso from-top text-center" id="start">Je suis prêt !</div>
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+        <div class="page text-center mx-auto " style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_voiture.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+            <div class="">
+                <h1 style="color: white;">Veuillez écouter l'enregistrement audio</h1>
+                <div class="lds-dual-ring"></div>
+
+            </div>
+   
+            <audio id="sound_voiture"  onended="change_page(this,'audio')"> <!--Source the audio file. -->
+                <source src="public/audio/Traffic-4dB.mp3" type="audio/mpeg" crossOrigin="anonymous">
+            </audio>
+        </div>
+
+        <div class="page" style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_voiture.jpg'); background-repeat: no-repeat; background-size: 100% 100%; ">
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-10  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto  ">
+                        <div class="text-center pb-3 question_text"  style="text-align: center;">
+                            <p id="question_context" class="pb-3"><strong> En voiture</strong></p>
+                            <p>Quelle direction est empruntée ?</p>
+                        </div>
+                
+                        <div data-value="true" class="btn_perso from-top" id="name">A droite</div>
+                        <div data-value="false" class="btn_perso from-top">A gauche</div>
+                        <div data-value="false" class="btn_perso from-top">Tout droit</div>
+                        <div data-value="false" class="btn_perso from-top">Je n'ai pas entendu</div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+        <div class="page" style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_maison.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-12  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto  ">
+                        <div class="text-center pb-3 context"  style="text-align: center;">
+                            <p id="question_context" class="pb-3"><strong>A la maison</strong></p>
+                            <p class="pb-4">Deux personnes vont retrouver des amis pour la soirée. </p>
+                            <p class="pb-5">Ecoutez le dialogue puis sélectionnez la bonne réponse parmi les choix proposés.</p>
+                        </div>
+                            <div class="btn_perso from-top text-center" id="start">Je suis prêt !</div>
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+        <div class="page text-center mx-auto " style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_maison.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+            <div class="">
+                <h1 style="color: white;">Veuillez écouter l'enregistrement audio</h1>
+                <div class="lds-dual-ring"></div>
+
+            </div>
+   
+            <audio id="sound_maison"  onended="change_page(this,'audio')"> <!--Source the audio file. -->
+                <source src="public/audio/Home-4dB.mp3" type="audio/mpeg" crossOrigin="anonymous">
+            </audio>
+        </div>
+
+        <div class="page" style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_maison.jpg'); background-repeat: no-repeat; background-size: 100% 100%; ">
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-10  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto  ">
+                        <div class="text-center pb-3 question_text"  style="text-align: center;">
+                            <p id="question_context" class="pb-3"><strong>A la maison</strong></p>
+                            <p>A quelle heure vont-ils rencontrer ?</p>
+                        </div>
+                
+                        <div data-value="false" class="btn_perso from-top" id="name">21h30</div>
+                        <div data-value="true" class="btn_perso from-top">19h45</div>
+                        <div data-value="false" class="btn_perso from-top">20h15</div>
+                        <div data-value="false" class="btn_perso from-top">Je n'ai pas entendu</div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+        <div class="page" style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_café.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-12  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto  ">
+                        <div class="text-center pb-3 context"  style="text-align: center;">
+                            <p id="question_context" class="pb-3"><strong>Au café</strong></p>
+                            <p class="pb-4">Quelqu'un commande une boisson dans un café. </p>
+                            <p class="pb-5">Ecoutez le dialogue puis sélectionnez la bonne réponse parmi les choix proposés.</p>
+                        </div>
+                            <div class="btn_perso from-top text-center" id="start">Je suis prêt !</div>
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+        <div class="page text-center mx-auto " style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_café.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+            <div class="">
+                <h1 style="color: white;">Veuillez écouter l'enregistrement audio</h1>
+                <div class="lds-dual-ring"></div>
+
+            </div>
+   
+            <audio id="sound_café"  onended="change_page(this,'audio')"> <!--Source the audio file. -->
+                <source src="public/audio/Bar-4dB.mp3" type="audio/mpeg" crossOrigin="anonymous">
+            </audio>
+        </div>
+
+        <div class="page" style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_café.jpg'); background-repeat: no-repeat; background-size: 100% 100%; ">
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-10  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto  ">
+                        <div class="text-center pb-3 question_text"  style="text-align: center;">
+                            <p id="question_context" class="pb-3"><strong>Au café</strong></p>
+                            <p>Qu'a-t-il commandé ?</p>
+                        </div>
+                
+                        <div data-value="true" class="btn_perso from-top" id="name">Un cappuccino</div>
+                        <div data-value="false" class="btn_perso from-top">Un moccaccino</div>
+                        <div data-value="false" class="btn_perso from-top">Un jus d'orange</div>
+                        <div data-value="false" class="btn_perso from-top">Je n'ai pas entendu</div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+
+        <div class="page" style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_concert.jpeg'); background-repeat: no-repeat; background-size: 100% 100%;">
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-12  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto  ">
+                        <div class="text-center pb-3 context"  style="text-align: center;">
+                            <p id="question_context" class="pb-3"><strong>Pendant un concert</strong></p>
+                            <p class="pb-4">Deux personnes cherchent leurs places à un concert.</p>
+                            <p class="pb-5">Ecoutez le dialogue puis sélectionnez la bonne réponse parmi les choix proposés.</p>
+                        </div>
+                            <div class="btn_perso from-top text-center" id="start">Je suis prêt !</div>
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+        <div class="page text-center mx-auto " style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_concert.jpeg'); background-repeat: no-repeat; background-size: 100% 100%;">
+            <div class="">
+                <h1 style="color: white;">Veuillez écouter l'enregistrement audio</h1>
+                <div class="lds-dual-ring"></div>
+
+            </div>
+   
+            <audio id="sound_concert"  onended="change_page(this,'audio')"> <!--Source the audio file. -->
+                <source src="public/audio/Concert-0dB.mp3" type="audio/mpeg" crossOrigin="anonymous">
+            </audio>
+        </div>
+
+        <div class="page" style="background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('public/img/img_concert.jpeg'); background-repeat: no-repeat; background-size: 100% 100%; ">
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-10  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto  ">
+                        <div class="text-center pb-3 question_text"  style="text-align: center;">
+                            <p id="question_context" class="pb-3"><strong>Pendant un concert</strong></p>
+                            <p>A quelle rangée se trouvent leur sièges ?</p>
+                        </div>
+                
+                        <div data-value="false" class="btn_perso from-top" id="name">M</div>
+                        <div data-value="false" class="btn_perso from-top">K</div>
+                        <div data-value="true" class="btn_perso from-top">N</div>
+                        <div data-value="false" class="btn_perso from-top">Je n'ai pas entendu</div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+
+        <div class="page" style="background-color: #FEEAE6; " >
+            <div class="wrapper row full_heigth">
+                <div class="vstack mx-auto col-lg-10  bg-light full_heigth">
+                    <div class="col-lg-9  mx-auto  ">
+                        <div class="text-center pb-3 question_text"  style="text-align: center;">
+                            <h1 id="score_result" class="mb-5"></h1>
+                            <div class="progress">
+                                <div class="progress-bar" aria-progressbar-name="progress bar result" role="progressbar" style="width: 0%;" aria-valuenow="3" aria-valuemin="0" aria-valuemax="6"></div>
+                            </div>
+                            <h2 class="mb-4 pb-3" id="remarque_result"></h2>
+                            <h4 class="mb-4 " id="remarque2_result" ></h4>
+                            <p class="mt-5 pt-5" id="conseil_result"></p>
+                            <div class="btn_perso from-top mx-auto mt-5" id="btn-reload" >Recommencer le test</div>
+                        </div>
+                
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+
+        
+
+        <div class="page vstack mx-auto text-center  col-lg-10  full_heigth" style="background-color: white;" onclick="change_page(this,'page')">
+            <div class="my-auto ">
+                <h1 class="pb-4 mb-2" style="color : #442C2E;"><strong> Test auditif en ligne gratuit</strong></h1>
+                <h2 class="pb-4  mb-5" style="color : #442C2E;">Testez votre audition en 3 minutes</h2>
+                <h2 class="pb-4 mt-5 mb-5" mb-5 style="color : #442C2E;"><span  style="color : red;"> Cliquez sur l'écran </span> pour commencer !</h2>
+     
+                <p class="pt-5" style="color : #442C2E;">Nous vous rappelons que ce test ne se substitue en aucun cas à un bilan auditif complet et personnalisé réalisé par un audioprothésiste diplômé d'Etat dans un centre auditif Acuitis ou chez un médecin ORL</p>
+            </div>
+           
+        </div>
+       
+        
+
+      
+
+    <script src="public/packages/jquery.js"></script>
+    <script async src="public/packages/bootstrap.bundle.js" ></script>
+    <script async src="public/js/check_device.js"></script>
+    <script async src="public/js/scripts_transition.js"></script>
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+           window.addEventListener('load', () => {
+              navigator.serviceWorker.register('sw.js');
+           });
+         }
+        </script>
+    </body>
+
+</html>

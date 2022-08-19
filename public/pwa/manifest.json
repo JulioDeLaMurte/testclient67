@@ -1,0 +1,24 @@
+{
+    "name": "Test Audio Acuitis",
+    "short_name": "Test Audio",
+    "theme_color": "#FEEAE6",
+    "background_color": "#442C2E",
+    "display": "Fullscreen",
+    "scope": "../../index.html",
+    "start_url": "../../index.html",
+    "description": "Test auditif simple pour les magasins Acuitis",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "../../public/img/Acuitis_Logo.webp",
+            "sizes": "144x144",
+            "type": "image/webp",
+            "purpose": "any"
+        },
+        {
+            "src": "../../public/img/Logo-Acuitis.png",
+            "sizes": "586x600",
+            "type": "image/webp"
+        }
+    ]
+}
