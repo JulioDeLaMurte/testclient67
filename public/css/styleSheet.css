@@ -127,7 +127,7 @@ body {
 .question_text{
     font-size: 1.8rem !important;
 	letter-spacing: 0.2rem !important;
-	margin-top: 12%;
+	margin-top: 18%;
 }
 
 #accueil{
@@ -145,7 +145,7 @@ body {
 .context{
 	font-size: 1.8rem !important;
 	letter-spacing: 0.2rem !important;
-	margin-top: 20%;
+	margin-top: 25%;
 }
 
 .vertical{
@@ -192,4 +192,16 @@ div:last-child {margin-bottom: 0;}
       transform: rotate(360deg);
     }
   }
+
+  @media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1023px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+	.question_text{
+		margin-top: 55%;
+	}
+	.context{
+		margin-top: 72%;
+	}
+}
 

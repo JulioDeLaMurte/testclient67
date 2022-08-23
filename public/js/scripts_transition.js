@@ -4,7 +4,7 @@ var sound_voiture = document.getElementById("sound_voiture");
 var sound_maison = document.getElementById("sound_maison");
 var sound_café = document.getElementById("sound_café");
 var sound_concert = document.getElementById("sound_concert");
-var score = 1
+var score = 0
 var nextItem = 0;
 
 const sleep = (milliseconds) => {
@@ -52,8 +52,8 @@ function display_final_result(){
     var remarque_result = ""
     var remarque2_result = ""
     var conseil_result = ""
-    var score_on_10 = (score * 10) / 6
-    if(score_on_10 != 5 && score_on_10 != 10){
+    var score_on_10 = (score * 10) / 5
+    if(score_on_10 != 5 && score_on_10 != 10 && score_on_10 != 0 && score_on_10 != 2){
         score_on_10 = score_on_10.toFixed(1) 
     }
 
@@ -122,7 +122,9 @@ async function change_page(this_page,element){
 
         case "restart":
             this_page = this_page.parentElement.parentElement.parentElement.parentElement.parentElement;
-            score = 1
+            $("#accueil").addClass('d-none');
+
+            score = 0
             break;
 
 
@@ -130,7 +132,7 @@ async function change_page(this_page,element){
             break;
     }
 
-    if(nextItem >= 0){
+    if(nextItem >= 1){
         $("#accueil").removeClass('d-none');
 
         console.log("affichage")
