@@ -103,6 +103,7 @@ async function change_page(this_page,element){
 
         case "restart":
             this_page = this_page.parentElement.parentElement.parentElement.parentElement.parentElement;
+            score = 1
             break;
         default:
             break;
