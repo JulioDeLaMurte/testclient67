@@ -197,10 +197,10 @@ div:last-child {margin-bottom: 0;}
   and (orientation: portrait) 
   and (-webkit-min-device-pixel-ratio: 1) {
 	.question_text{
-		margin-top: 50%;
+		margin-top: 35%;
 	}
 	.context{
-		margin-top: 62%;
+		margin-top: 50%;
 	}
 }
 
