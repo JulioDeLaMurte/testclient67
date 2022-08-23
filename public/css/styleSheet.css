@@ -100,12 +100,7 @@
 	width: 60%;
 }
 
-#headphone_svg{
-	width: 85px ;
-	height: 85px;
-    position: absolute;
-    left: 48%;
-    top: 15%;}
+
 
 body {
 	--def: white !important; 	

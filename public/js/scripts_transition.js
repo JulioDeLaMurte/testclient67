@@ -43,9 +43,7 @@ $(".btn_perso").click(function(event){
     change_page(this,"button")
 })
 
-$("#btn-reload").click(function(event){
-    change_page(this,"restart")
-})
+
 
 function display_final_result(){
     console.log("passage display !! ")
@@ -79,19 +77,8 @@ function display_final_result(){
 
 }
 
-function backToHome(this_page){
-    stop_sound()
-    this_page = this_page.parentElement;
-    console.log(this_page)
-    score = 1
-    $("#accueil").addClass('d-none');
-    nextItem = -1;
-
-    $('.page:eq('+ nextItem +')').css('z-index', parseInt($(this_page).css('z-index')) + 1);
-    $('#accueil').css('z-index', parseInt($(this_page).css('z-index')) + 17);
-
-    nextItem++;
-
+function reload(){
+    window.location = window.location.href;
 }
 
 function stop_sound(){
@@ -120,13 +107,6 @@ async function change_page(this_page,element){
             this_page = this_page.parentElement;
             break;
 
-        case "restart":
-            this_page = this_page.parentElement.parentElement.parentElement.parentElement.parentElement;
-            $("#accueil").addClass('d-none');
-
-            score = 0
-            break;
-
 
         default:
             break;
@@ -148,25 +128,9 @@ async function change_page(this_page,element){
 
     $('.page:eq('+ nextItem +')').css('z-index', parseInt($(this_page).css('z-index')) + 1);
 
-    nextItem = nextItem == 17 ? -1 : nextItem+1;
+    nextItem ++;
 
     launch_music()
 
 }
 
-
-/* 
-var playButton = document.getElementById('control');
-var is_play = false
-playButton.addEventListener('click', e => {
-  e.preventDefault();
-  if(!is_play){
-    sound_ouverture.play(); //play the audio file
-    playButton.classList.toggle('is--playing');
-
-    is_play = true
-  }
-
-});
-
-*/
