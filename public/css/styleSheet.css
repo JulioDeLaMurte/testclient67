@@ -130,6 +130,18 @@ body {
 	margin-top: 12%;
 }
 
+#accueil{
+	font-size: 1.1rem !important;
+
+	position: absolute;
+    bottom: 4%;
+    right: 7%;
+	z-index: 100001;
+	text-decoration: underline;
+	color : white;
+	background: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) );
+}
+
 .context{
 	font-size: 1.8rem !important;
 	letter-spacing: 0.2rem !important;

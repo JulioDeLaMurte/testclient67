@@ -79,13 +79,32 @@ function display_final_result(){
 
 }
 
-async function change_page(this_page,element){
+function backToHome(this_page){
+    stop_sound()
+    this_page = this_page.parentElement;
+    console.log(this_page)
+    score = 1
+    $("#accueil").addClass('d-none');
+    nextItem = -1;
 
+    $('.page:eq('+ nextItem +')').css('z-index', parseInt($(this_page).css('z-index')) + 1);
+    $('#accueil').css('z-index', parseInt($(this_page).css('z-index')) + 15);
+
+    nextItem++;
+
+}
+
+function stop_sound(){
     sound_park.pause(); //stop the audio file
     sound_voiture.pause(); //stop the audio file
     sound_maison.pause(); //stop the audio file
     sound_café.pause(); //stop the audio file
     sound_concert.pause();//stop the audio file
+}
+
+async function change_page(this_page,element){
+    stop_sound()
+
 
     switch (element) {
         case "button":
@@ -105,9 +124,18 @@ async function change_page(this_page,element){
             this_page = this_page.parentElement.parentElement.parentElement.parentElement.parentElement;
             score = 1
             break;
+
+
         default:
             break;
     }
+
+    if(nextItem >= 0){
+        $("#accueil").removeClass('d-none');
+
+        console.log("affichage")
+    }
+
 
     if(nextItem == 17){
         display_final_result()
@@ -115,13 +143,10 @@ async function change_page(this_page,element){
 
     console.log(nextItem)
  
-    if(nextItem >= 3){
-        $('.carousel__bullets').css('display', 'show');
-    }
 
     $('.page:eq('+ nextItem +')').css('z-index', parseInt($(this_page).css('z-index')) + 1);
 
-    nextItem = nextItem == 17 ? 0 : nextItem+1;
+    nextItem = nextItem == 17 ? -1 : nextItem+1;
 
     launch_music()
 
