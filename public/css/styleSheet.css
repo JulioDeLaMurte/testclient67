@@ -128,7 +128,7 @@ body {
 
 #accueil{
 	font-size: 1.1rem !important;
-
+    z-index: 10000;
 	position: absolute;
     bottom: 4%;
     right: 7%;
