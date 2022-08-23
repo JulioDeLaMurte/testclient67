@@ -88,7 +88,7 @@ function backToHome(this_page){
     nextItem = -1;
 
     $('.page:eq('+ nextItem +')').css('z-index', parseInt($(this_page).css('z-index')) + 1);
-    $('#accueil').css('z-index', parseInt($(this_page).css('z-index')) + 15);
+    $('#accueil').css('z-index', parseInt($(this_page).css('z-index')) + 17);
 
     nextItem++;
 
