@@ -119,10 +119,6 @@ body {
 	overflow-y: hidden; 
 }
 
-.div_reglage{
-	margin-top: 35% !important;
-
-}
 
 .question_text{
     font-size: 1.8rem !important;
@@ -136,7 +132,6 @@ body {
 	position: absolute;
     bottom: 4%;
     right: 7%;
-	z-index: 100001;
 	text-decoration: underline;
 	color : white;
 	background: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) );
@@ -209,3 +204,17 @@ div:last-child {margin-bottom: 0;}
 	}
 }
 
+
+/* Landscape Ipad */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+	.question_text{
+		margin-top: 18%;
+	}
+	.context{
+		margin-top: 25%;
+	}
+}
