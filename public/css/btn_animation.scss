@@ -9,7 +9,7 @@
 	letter-spacing: .08em;
 	text-transform: uppercase;
 	position: relative;
-	transition: background-color .6s ease;
+	transition: background-color .5s ease;
 	overflow: hidden;
 	&:after {
 	  content: "";
@@ -24,7 +24,7 @@
 	  transform: translate3d(-50%,-50%,0);
 	  background: rgba(white,.1);
 	  border-radius: 100%;
-	  transition: width .3s ease, height .3s ease;
+	  transition: width .2s ease, height .2s ease;
 	}
 	&:focus,
 	&:hover {

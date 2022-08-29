@@ -99,7 +99,7 @@ async function change_page(this_page,element){
               score++;
               console.log("score actuel : " + score)
             }
-            await sleep(400)
+            await sleep(300)
             this_page = this_page.parentElement.parentElement.parentElement.parentElement;
             break;
         
